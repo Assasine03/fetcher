@@ -1,20 +1,15 @@
 #!/bin/bash
 
-# URL of the file to download
+# URL to download from
 url="https://assetdelivery.roblox.com/v1/asset/?id=16295427447"
 
-# Output file path
-output_file="output.txt"
+# Directory to save the downloaded content
+output_dir="/path/to/your/output/directory"
 
-# Download the file
-curl -sS -o "$output_file" "$url"
+# Download the content
+echo "Downloading content from $url..."
+curl -sS "$url" --output "$output_dir/asset_content.txt"
 
-# Check if the download was successful
-if [ $? -eq 0 ]; then
-    echo "File downloaded successfully."
-    
-    # Process the file content here, for example, you can print it
-    cat "$output_file"
-else
-    echo "Failed to download the file."
-fi
+# Process the downloaded content (example: print it)
+echo "Processing downloaded content:"
+cat "$output_dir/asset_content.txt"
