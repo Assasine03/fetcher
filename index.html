@@ -8,11 +8,11 @@
 <body>
     <div id="content"></div>
     <script>
-        // Function to fetch content from the provided URL
+        // Function to fetch content from the serverless function
         function fetchContent() {
-            var url = "https://assetdelivery.roblox.com/v1/asset/?id=16295427447";
+            var url = "/api/fetchContent";
 
-            // Send a GET request to the URL
+            // Send a GET request to the serverless function URL
             fetch(url)
                 .then(response => response.text())
                 .then(data => {
